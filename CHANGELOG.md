@@ -1,4 +1,4 @@
-## 0.1.0 - Improve UX
+## 0.3.0 - Improve UX
 * show notification
 * replace entities for non-developer
 
