@@ -25,7 +25,7 @@ class RidRenderer
     try
       doc = libxmljs.parseXml(data)
     catch error
-      @errorCallback('[rid] 미리보기 실패! 뭔가 잘못됐어요 :/', error)
+      @errorCallback?('[rid] 미리보기 실패! 뭔가 잘못됐어요 :/', error)
       return ''
 
     html = libxmljs.Document()
@@ -37,7 +37,7 @@ class RidRenderer
         when 'part5' then root.addChild @parsePart5(html, part)
         when 'part6' then root.addChild @parsePart6(html, part)
 
-    @errorCallback("[rid] 미리보기 성공!", null)
+    @errorCallback?("[rid] 미리보기 성공!", null)
     str = root.toString()
     str = str.replace /&lt;/g, '<'
     str = str.replace /&gt;/g, '>'
