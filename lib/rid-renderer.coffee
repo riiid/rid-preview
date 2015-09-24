@@ -81,7 +81,7 @@ class RidRenderer
 
   makeLevel: (html, parent, node) ->
     text = node.text().trim().replace(/\n/g, '<br/>')
-    text = "<div class='level'>난이도: #{text}</div>"
+    text = "<hr/><div class='level'>난이도: #{text}</div>"
     doc = libxmljs.parseHtml(text)
     root = doc.root()
     parent.addChild root
@@ -184,6 +184,8 @@ class RidRenderer
         when 'text' then @appendText html, root, child
         when 'numbers' then root.node('span', ' x~y ').attr({class: 'numbers'})
         when 'type' then root.node('span', " #{text} ").attr({class: 'type'})
+    root.node('br')
+    root.node('br')
     parent.addChild root
 
   makeAnswers: (html, parent, node) ->
@@ -198,7 +200,6 @@ class RidRenderer
   makeAnswer: (html, parent, node) ->
     root = libxmljs.Element(html, 'div').attr(class: 'answer')
     children = node.childNodes()
-    root.node('hr')
     for child in children
       switch child.name()
         when 'level' then @makeLevel html, root, child
