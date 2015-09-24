@@ -151,6 +151,7 @@ class RidPreviewView extends ScrollView
         @html(domFragment)
         @emitter.emit 'did-change-rid'
         @originalTrigger('rid-preview:rid-changed')
+        @scrollTop(@editor.displayBuffer.scrollTop)
 
   getTitle: ->
     if @file?
