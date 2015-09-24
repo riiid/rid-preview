@@ -1,7 +1,7 @@
 {
   "name": "rid-preview",
   "main": "./lib/rid-preview",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Rid preview in ATOM",
   "keywords": [],
   "activationCommands": {
