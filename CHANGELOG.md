@@ -1,4 +1,8 @@
-## 0.0.2 - First Release
+## 0.1.0 - Improve UX
+* show notification
+* replace entities for non-developer
+
+## 0.0.2
 * support [language-rid][rid] spec
 
 ## 0.0.1 - First Release
